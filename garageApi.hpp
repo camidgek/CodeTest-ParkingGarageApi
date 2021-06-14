@@ -114,8 +114,9 @@ public:
      * Attempt to park a vehicle in the requested parking garage. The first compatible
      *  and empty spot will be chosen. Will return an error if no spots can be found.
      * 
-     * @param parkingSpotId ID of the requested parking spot.
-     * @param parkingSpotInfo (OUT) Struct populated with info of the requested parking spot.
+     * @param vehicle Vehicle to park.
+     * @param garageId ID of the requested parking garage.
+     * @param parkingSpotId (OUT) ID of the parking spot the vehicle is parked in.
      * @return relevant return code.
      */
     GarageRetCode ParkVehicleInGarage(VehicleInfo_t vehicle, int garageId, int &parkingSpotId);
@@ -123,8 +124,8 @@ public:
      * Attempt to park a vehicle in the requested parking spot. Will return an
      *  error if spot is full or does not match the type of vehicle provided. 
      * 
+     * @param vehicle Vehicle to park.
      * @param parkingSpotId ID of the requested parking spot.
-     * @param parkingSpotInfo (OUT) Struct populated with info of the requested parking spot.
      * @return relevant return code.
      */
     GarageRetCode ParkVehicleInSpot(VehicleInfo_t vehicle, int parkingSpotId);
